@@ -53,4 +53,18 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+
+            <!-- 關閉 CDS 警告 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>-Xshare:off</argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
