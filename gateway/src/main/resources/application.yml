@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: helloword
+          uri: http://localhost:3000
+          predicates:
+              - Path=/hello/**
+          filters:
+            - StripPrefix=1 # 把請求路徑去掉第一段（也就是 /hello），轉成 / 開頭再丟給 helloword 服務
+

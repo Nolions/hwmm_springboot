@@ -22,11 +22,14 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <lombok.verstion>1.18.26</lombok.verstion>
         <spring-boot.version>3.3.12</spring-boot.version>
+        <spring-cloud.version>2023.0.6</spring-cloud.version>
     </properties>
 
     <!-- 子模組註冊 -->
     <modules>
+        <module>gateway</module>
         <module>helloword</module>
     </modules>
 
@@ -35,7 +38,7 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.26</version>
+                <version>${lombok.verstion}</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -43,6 +46,15 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+
+            <!-- 新增 Spring Cloud Dependencies -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>  <!-- 根據你 Spring Boot 版本選對應的 Spring Cloud 版本 -->
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <dependency>
