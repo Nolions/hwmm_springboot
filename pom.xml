@@ -25,6 +25,7 @@
 
     <!-- 子模組註冊 -->
     <modules>
+        <module>helloword</module>
     </modules>
 
 </project>
