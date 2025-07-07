@@ -25,6 +25,7 @@
         <lombok.verstion>1.18.26</lombok.verstion>
         <spring-boot.version>3.3.12</spring-boot.version>
         <spring-cloud.version>2023.0.6</spring-cloud.version>
+        <cucumber.version>7.14.0</cucumber.version>
     </properties>
 
     <!-- 子模組註冊 -->
@@ -48,7 +49,7 @@
                 <version>${spring-boot.version}</version>
             </dependency>
 
-            <!-- 新增 Spring Cloud Dependencies -->
+            <!-- Spring Cloud -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -61,6 +62,28 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring-boot.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!--  cucumber -->
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-java</artifactId>
+                <version>${cucumber.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-junit</artifactId>
+                <version>${cucumber.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-spring</artifactId>
+                <version>${cucumber.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
