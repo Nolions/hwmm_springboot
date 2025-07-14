@@ -1,16 +1,26 @@
 server:
   port: 8080
 
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.loadbalancer: DEBUG
+    com.alibaba.cloud.nacos: DEBUG
+
 spring:
   application:
     name: gateway
+
   cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
     gateway:
       routes:
         - id: helloword
-          uri: http://localhost:3000
+          uri: lb://helloword
           predicates:
-              - Path=/hello/**
+            - Path=/hello/**
           filters:
-            - StripPrefix=1 # 把請求路徑去掉第一段（也就是 /hello），轉成 / 開頭再丟給 helloword 服務
-
+            - StripPrefix=1

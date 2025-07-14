@@ -4,3 +4,8 @@ server:
 spring:
   application:
     name: helloword
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
